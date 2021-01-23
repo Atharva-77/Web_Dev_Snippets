@@ -1,12 +1,18 @@
 import React,{useState} from 'react';
 import DatePicker from  'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
+import axios from 'axios';
+
 
 function ExerciseCreate() {
     const [username, setusername] = useState('');
     const [description, setdescription] = useState('');
     const [duration, setduration] = useState(0);
     const [date, setdate] = useState(new Date());
+
+    const api=axios.create({
+        baseURL: 'http://localhost:3000/exercises/'
+    })
 
     const onUsername=(e)=> 
     { 
@@ -28,13 +34,21 @@ function ExerciseCreate() {
     const submit_form=()=>
     {
         const ex={
-            user:username,
-            desc:description,
-            durat:duration,
-            dat:date
+            "userName":username, //Lhhs as mentioned in postman api tezting or in routes-->exercise_route.js . Name as mentioned as in router.post function
+            "description":description,
+            "duration":duration,
+            "date":date
         }
         console.log(ex)
-       
+        
+        axios.post(`http://localhost:3000/exercises/add`,ex)
+         .then(res => console.log(res.data))
+
+         axios.get(`http://localhost:3000/exercises/`)
+         .then(res => console.log(res.data))
+        // api.get('/').then(res => {
+        //     console.log(res.data)
+        // })
     }
 
 
