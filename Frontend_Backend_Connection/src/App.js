@@ -5,6 +5,7 @@ import ExEdit from './components/ExerciseEdit';
 import ExList from './components/ExerciseList';
 import ExUser from './components/ExerciseUser';
 import Navbar from './components/Navbar'
+import Search from './components/SearchUser'
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
           <Route path="/user">  
             <ExUser />
           </Route>
+
+          <Route path="/search">  
+            <Search />  
+          </Route> 
 
       </Router>
 
