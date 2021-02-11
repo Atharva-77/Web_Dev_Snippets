@@ -1,8 +1,17 @@
 import React, {useState,useEffect} from 'react'
 
+const people = [
+  "Siri",
+  "Alexa",
+  "Google",
+  "Facebook",
+  "Twitter",
+  "Linkedin",
+  "Sinkedin"
+];
 function SearchUser() {
     const [searchTerm, setsearchTerm] = useState('')
-    const [searchResult, setsearchResult] = useState('')
+    const [searchResult, setsearchResult] = useState([])// This is array not string. not ''
 
     const handleSearchTerm=(e)=>
     {
@@ -11,22 +20,27 @@ function SearchUser() {
    
       useEffect(() => {
 
-        const people = [
-            "Siri",
-            "Alexa",
-            "Google",
-            "Facebook",
-            "Twitter",
-            "Linkedin",
-            "Sinkedin"
-          ];
+        //can be defined outside func also, like above.
+        // const people = [
+        //   "Siri",
+        //   "Alexa",
+        //   "Google",
+        //   "Facebook",
+        //   "Twitter",
+        //   "Linkedin",
+        //   "Sinkedin"
+        // ];
+        
+        
         const results = people.filter(person =>
             person.toLowerCase().includes(searchTerm)
           );
-          
+
           console.log("updating SearchTerm:-",searchTerm,"-:Results:-",results)
+
           setsearchResult(results)
-        //   console.log("searchResult:-",searchResult)..lag by 1 itteration if printed hhere
+          //   console.log("searchResult:-",searchResult)..lag by 1 itteration if printed hhere
+
       },[searchTerm] )
 
     return (
@@ -40,17 +54,16 @@ function SearchUser() {
             <h2>{searchTerm}</h2>
             <h2>{searchResult}</h2>
            
-            {/* <ul >
-            {setsearchResult.filter(i =>
-              <li>i</li> 
-              )}
-
-            </ul>  */}
+            <ul >
+                 {searchResult.map(i =>
+                 (
+                    <li>{i}</li> 
+                   )
+                   )}
+            </ul> 
 
             {console.log("searchResult:-",searchResult)}
             {/* Similar to result in useEffect */}
-
-
         </ div>
     )
 }
