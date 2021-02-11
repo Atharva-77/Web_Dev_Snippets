@@ -21,6 +21,10 @@ function Navbar() {
                 <button >User</button>
             </Link>
 
+            <Link to="/search"> 
+                <button >Search</button>
+            </Link>
+
         </div>
     )
 }
