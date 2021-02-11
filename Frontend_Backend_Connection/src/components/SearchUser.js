@@ -9,7 +9,6 @@ function SearchUser() {
         setsearchTerm(e.target.value)
     }
    
-
       useEffect(() => {
 
         const people = [
@@ -24,19 +23,34 @@ function SearchUser() {
         const results = people.filter(person =>
             person.toLowerCase().includes(searchTerm)
           );
-          console.log("updating",searchTerm,results)
+          
+          console.log("updating SearchTerm:-",searchTerm,"-:Results:-",results)
           setsearchResult(results)
+        //   console.log("searchResult:-",searchResult)..lag by 1 itteration if printed hhere
       },[searchTerm] )
-      
+
     return (
         <div>
-            <input
+            <h3>Search User here</h3>
+            Username<input
                 value={searchTerm}
                 onChange={handleSearchTerm} 
             />
 
             <h2>{searchTerm}</h2>
-            {/* <h3>{searchResult.map((i) => (i))}</h3> */}
+            <h2>{searchResult}</h2>
+           
+            {/* <ul >
+            {setsearchResult.filter(i =>
+              <li>i</li> 
+              )}
+
+            </ul>  */}
+
+            {console.log("searchResult:-",searchResult)}
+            {/* Similar to result in useEffect */}
+
+
         </ div>
     )
 }

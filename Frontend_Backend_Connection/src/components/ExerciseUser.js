@@ -54,25 +54,55 @@ function ExerciseUser() {
         setuserName('')
         console.log("Boolean value",boolpg)
 
+
     }
 
 
-    return (
-        <div>
-            <h3>You are in Exercise User</h3>
-            UserName<input value={userName} onChange={onUserName}/><br /><br />
-            <h2>{boolpg}</h2>
-            <button onClick={submit_form}>Submit</button>
-            <h2>{boolpg}</h2>
-            {/* { boolpg ? <h1>Yoo</h1> : <h1>Lol</h1> } */}
-            { boolpg ? <Redirect to="/" /> : <h1>Login Again</h1> }
+    if(!boolpg)
+    {
+        return (
+            <div>
+                <h3>You are in Exercise User</h3>
+                UserName<input value={userName} onChange={onUserName}/><br /><br />
+                <h2>{boolpg}</h2>
+                <button onClick={submit_form}>Submit</button>
+                <h2>{boolpg}</h2>
+                {/* <h1>Login Again</h1> */}
+    
+            </div>
+        )
+    }
 
-            {/* if (boolpg==="true") {
-                            //  <Redirect to='/'  />
+    else if(boolpg===1)
+    {
+        return (
+            <div>
+                <h3>You are in Exercise User</h3>
+                UserName<input value={userName} onChange={onUserName}/><br /><br />
+                {/* <h2>{boolpg}</h2> */}
+                <button onClick={submit_form}>Submit</button>
+                {/* <h2>{boolpg}</h2> */}
+                { boolpg ? <Redirect to="/" /> : null }
+    
+            </div>
+        )
+        
+    }
+    // else
+    // {
+    //     return (<h1>LOgin again</h1>)
+    // }
+    // return (
+    //     <div>
+    //         <h3>You are in Exercise User</h3>
+    //         UserName<input value={userName} onChange={onUserName}/><br /><br />
+    //         <h2>{boolpg}</h2>
+    //         <button onClick={submit_form}>Submit</button>
+    //         <h2>{boolpg}</h2>
+    //         { boolpg ? <Redirect to="/" /> : <h1>Login Again</h1> }
 
-            } */}
-        </div>
-    )
+    //     </div>
+    // )
 }
 
 export default ExerciseUser
