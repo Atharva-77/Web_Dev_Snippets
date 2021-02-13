@@ -1,3 +1,7 @@
+//Things to remember
+//1.Callback fun
+//2.Previous state, Use func
+
 import React, { Component } from 'react'
 
 export class SetState extends Component {
