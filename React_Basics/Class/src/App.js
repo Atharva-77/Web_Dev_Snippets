@@ -3,13 +3,13 @@ import './App.css';
 import Children_class from './Children_class';
 import Children_func from './Children_func.js'
 import State_classes from './State_class';
-
+import SetState from './SetState';
 
 function App() {
   return (
     <div className="App">
-
-      <State_classes />
+      <SetState />
+      {/* <State_classes /> */}
       {/* <h1>Hello js</h1>
 
       <Children_func name="Ath" hero="Spiderman">
