@@ -25,6 +25,10 @@ function Navbar() {
                 <button >Search</button>
             </Link>
 
+            <Link to="/login"> 
+                <button >Login</button>
+            </Link>
+
         </div>
     )
 }

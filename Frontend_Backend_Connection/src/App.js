@@ -6,6 +6,7 @@ import ExList from './components/ExerciseList';
 import ExUser from './components/ExerciseUser';
 import Navbar from './components/Navbar'
 import Search from './components/SearchUser'
+import Login from './components/LoginUser'
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
       <Router >  
         <h4>Navbar is below</h4>
           <Navbar/>
-
+          
+          {/*All buttons in Navbar.js  */}
+          
           <Route exact path="/">  
             <ExList />
           </Route>
@@ -38,6 +41,11 @@ function App() {
           <Route path="/search">  
             <Search />  
           </Route> 
+
+          <Route path="/login">  
+            <Login />  
+          </Route> 
+          
 
       </Router>
 
