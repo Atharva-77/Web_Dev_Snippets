@@ -1,0 +1,6 @@
+.search .searchTerm
+{
+    max-width: 150px;
+    background-color: lightgrey;
+    margin: auto;
+}

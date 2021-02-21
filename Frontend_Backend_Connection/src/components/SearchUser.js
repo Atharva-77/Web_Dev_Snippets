@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios';
-
+import './SearchUser.css'
 function SearchUser() {
     const [searchTerm, setsearchTerm] = useState('')
     const [searchResult, setsearchResult] = useState([])// This is array not string. not ''
@@ -30,46 +30,44 @@ function SearchUser() {
      
       
     return (
-        <div>
+        <div className="search"> 
             <h3>Search User here</h3>
             Username<input
                 value={searchTerm}
                 onChange={(e=>setsearchTerm(e.target.value))} 
             />
-            <h2>Name list</h2>
-            {filteredCountries.map((country,idx) => (
-              // <h2>{country}</h2>
-              <CountryDetail key={idx} {...country} />
+            {/* <h2>Name list</h2> */}
+            <div className="search searchTerm">
+              {
+                // searchTerm?console.log("true"):console.log("false")
+                searchTerm?
+                        filteredCountries.map((country,idx) => (          
+                        <CountryDetail key={idx} {...country} />
+          
+                        )):""
+                      
+              }
 
+              {
+                filteredCountries.length==0 ?<h2>No data</h2>:null
+              }
+            </div>
 
-            ))}
-
-            {console.log("Sr1=",nameList)}
-
-
-           {/* <h2> Name list:-{name_list}</h2> */}
-            
-            {/* 
-            <ul >
-                 {searchResult.map(i =>
-                 (
-                    <li>{i}</li> 
-                   )
-                   )}
-            </ul>  */}
-
+            {console.log("Sr1=",filteredCountries.length)}
            
         </ div>
     )
-}
-
-const CountryDetail = (props) => {
-  const { userName } = props;
-
-  return (
-    <div>
+  }
+  
+  const CountryDetail = (props) => {
+    const { userName} = props;
+    
+    console.log("Country",userName);
+    // if()
+    return (
+      <div>
       {/* <h2>COuntry</h2> */}
-      <p>{userName}</p>
+      <small>{userName}</small>
     </div>
   );
 };
