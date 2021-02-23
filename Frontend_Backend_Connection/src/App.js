@@ -7,6 +7,7 @@ import ExUser from './components/ExerciseUser';
 import Navbar from './components/Navbar'
 import Search from './components/SearchUser'
 import Login from './components/LoginUser'
+import Pagination from './components/Pagination1'
 
 function App() {
   return (
@@ -46,6 +47,10 @@ function App() {
             <Login />  
           </Route> 
           
+
+          <Route path="/pagination">  
+            <Pagination />  
+          </Route> 
 
       </Router>
 

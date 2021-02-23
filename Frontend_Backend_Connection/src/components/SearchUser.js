@@ -49,11 +49,11 @@ function SearchUser() {
               }
 
               {
-                filteredCountries.length==0 ?<h2>No data</h2>:null
+                filteredCountries.length==0 && searchTerm.length>0?<h2>No data</h2>:null
               }
             </div>
 
-            {console.log("Sr1=",filteredCountries.length)}
+            {console.log("Sr1=",filteredCountries.length,searchTerm.length)}
            
         </ div>
     )
@@ -67,7 +67,7 @@ function SearchUser() {
     return (
       <div>
       {/* <h2>COuntry</h2> */}
-      <small>{userName}</small>
+      <small className="sm">{userName}</small>
     </div>
   );
 };

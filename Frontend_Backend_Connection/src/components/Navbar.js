@@ -29,6 +29,10 @@ function Navbar() {
                 <button >Login</button>
             </Link>
 
+            <Link to="/pagination"> 
+                <button >pagination</button>
+            </Link>
+
         </div>
     )
 }
