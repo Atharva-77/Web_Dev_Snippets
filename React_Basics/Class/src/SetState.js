@@ -25,8 +25,8 @@ export class SetState extends Component {
         // ) 
         // console.log(this.state.count) //lag by 1. Therefore put all code after setState in callback
 
-        //If obj is passed, opof incrementFive is 1 as all 5 statements are combined & 1 call made.Thus pass function NOT obj.
-
+        //If obj is passed, o/p of incrementFive is 1 as all 5 statements are combined & 1 call made.Thus pass function NOT obj.
+        // Calls to setstate are async   
         this.setState((prevCnt,props)=>(
         {
             count:prevCnt.count + 1 //+props.addVal

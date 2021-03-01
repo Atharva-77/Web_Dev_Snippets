@@ -7,12 +7,15 @@ import SetState from './SetState';
 import EventHandler from './EventHandler'
 import Binding from './Binding';
 import EventHandler_Class from './EventHandler_Class';
+import ParentCompo from './ParentCompo';
 
 function App() {
   return (
     <div className="App">
 
-      <Binding />
+      <ParentCompo />
+      {/* <Binding /> */}
+
       {/* <EventHandler /> */}
       {/* <EventHandler_Class /> */}
 

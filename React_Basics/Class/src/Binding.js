@@ -54,12 +54,14 @@ class Binding extends Component {
 
                 {/* 2nd method */}
                 <button onClick={this.clickHandler.bind(this)}>Binding w/o arrow</button>
+
                 {/* 3rd method */}
                 <button onClick={this.handler}>Binding in class constructor</button>
+
                 {/* 4th method */}
                 <button onClick={this.arrowhandler}>Binding via arrow method</button>
 
-
+                {/* 3rd better than 2nd as component has to be re-rendered after onClick.Performance issues */}
             </div>
         )
     }
