@@ -1,7 +1,3 @@
-//Things to remember
-//1.Callback fun
-//2.Previous state, Use func
-
 import React, { Component } from 'react'
 
 export class SetState extends Component {
@@ -15,8 +11,8 @@ export class SetState extends Component {
     }
     increment()
     {
-		//this.state.count = this.state.count + 1
--        	//console.log(this.state.count)
+        		//this.state.count = this.state.count + 1
+                // console.log(this.state.count)
 
         // this.setState(
         //     {
@@ -31,9 +27,9 @@ export class SetState extends Component {
 
         //If obj is passed, opof incrementFive is 1 as all 5 statements are combined & 1 call made.Thus pass function NOT obj.
 
-        this.setState((prevCnt)=>(
+        this.setState((prevCnt,props)=>(
         {
-            count:prevCnt.count + 1
+            count:prevCnt.count + 1 //+props.addVal
         }),
         ()=>
         {

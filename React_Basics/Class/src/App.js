@@ -4,11 +4,19 @@ import Children_class from './Children_class';
 import Children_func from './Children_func.js'
 import State_classes from './State_class';
 import SetState from './SetState';
+import EventHandler from './EventHandler'
+import Binding from './Binding';
+import EventHandler_Class from './EventHandler_Class';
 
 function App() {
   return (
     <div className="App">
-      <SetState />
+
+      <Binding />
+      {/* <EventHandler /> */}
+      {/* <EventHandler_Class /> */}
+
+      {/* <SetState /> */}
       {/* <State_classes /> */}
       {/* <h1>Hello js</h1>
 
